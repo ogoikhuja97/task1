@@ -1,12 +1,79 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ru">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Document</title>
+    <link href="https://fonts.googleapis.com/css?family=Roboto:300,400&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    hello world!
+    <div class="wrap">
+        <form action="">
+                <h1>Специалист менеджер</h1>
+            <div class="consultation-form">
+            <div class="manager">
+                    <img src="images/consultat.jpg" alt="">
+                    <div class="manager_info">
+                            <a href="#">Мавлуткулова Анфиса Газинуровна</a>
+                            <p>Главный специалист по продаже недвижимости</p>
+                    </div>
+                   
+             </div>
+            
+            </div>
+            <div class="evaluation">
+                <p>Ваша оценка</p>
+                <div class="evalution_imgages">
+                        <img src="images/web-mark-as-favorite-star.png" alt="">
+                        <img src="images/web-mark-as-favorite-star.png" alt="">
+                        <img src="images/web-mark-as-favorite-star.png" alt="">
+                        <img src="images/web-mark-as-favorite-star.png" alt="">
+                        <img src="images/web-mark-as-favorite-star.png" alt="">
+                </div>
+            </div>   
+            
+            <div class="form_comment">
+                <p>Комментарий</p>
+                <textarea placeholder="Ваше сообщение " cols="56" rows="10"></textarea>
+                    
+            </div>
+            <input type = "file" name = "file" id = "file"  class = "inputfile" data-multiple-caption = "{count} файлов выбрано" несколько />
+            <input type="file" name="file" id="file" class="inputfile" />
+            <label for="file"><img src="images/ico_choose-file.png"> Прикрепить файл</label>
+            
+            <button>Оценить менеджера</button>
+            </form>
+    </div>
+
+    <script>
+    
+    let inputs = document.querySelectorAll( '.inputfile' );
+Array.prototype.ForEach.call( inputs, function( input)
+{
+	let label = input.nextElementSibling,
+ 	   labelVal =label.innerHTML;
+	input.addEventListener( 'change', function(e)
+	{
+	
+	let fileName = '';
+	if(this.files && this.files.length > 1)
+	fileName = ( this.getAttribute( 'data-multiple-caption') || '') .replace ( '{count}' , this.files.length);
+	else 
+		fileName = e.target.value.split('\\').pop();
+	if(fileName)
+    label.querySelector( 'span').innerHTML = fileName;
+    
+	else
+	label.innerHTML = labelVal;
+});
+});
+    
+    
+    
+    
+    </script>
+
 </body>
 </html>

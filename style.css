@@ -1,0 +1,129 @@
+body{
+    margin:0;
+    padding:0;
+    font-family: 'Roboto', sans-serif;
+}
+
+
+form{
+    width:450px;
+    height:600px;
+    margin:0 auto;
+    border:1px solid #DCDCDC; /* Цвет границы */
+    border-radius:5px;
+    box-shadow: 0 0 10px rgba(0,0,0,0.5);
+    margin-top:20px;
+
+}
+form h1{
+    text-align: center;
+    text-transform: uppercase;
+    color:rgb(46, 42, 42);
+    font-size: 20px;
+    letter-spacing: 0.3em;
+}
+.consultation-form{
+    border:1px solid #DCDCDC; /* Цвет границы */
+    border-radius:5px;
+    margin-left:20px;
+    margin-right:20px;
+}
+.consultation-form img{
+    width:60px;
+    height:60px;
+    border-radius:50%;
+    padding-left:5px;
+}
+.manager{
+    display:flex;
+   
+    margin-top:10px;
+    margin-bottom:10px;
+}
+.manager_info{
+    margin-left:10px;
+    margin-top:10px;
+}
+.manager_info a{
+    
+    color:rgb(46, 42, 42);
+    font-size: 15px;
+    letter-spacing: 0.1em;
+    margin-bottom:-5px;
+    text-decoration:none;
+}
+.manager_info p{
+    margin-top:5px;
+    font-size: 10px;
+    letter-spacing:0.1em;
+}
+/*Evaluation*/
+.evaluation {
+    margin-left: 15px;
+}
+.evalution_imgages{
+    display:flex;
+
+}
+.evalution_imgages img{
+    margin-left:15px;
+    width:30px;
+    height:30px;
+}
+.evalution_imgages img:first-child{
+    margin-left:0;
+}
+/*comment*/
+.form_comment{
+    margin-left:15px;
+}
+textarea{
+    border-radius:5px;
+    color:#000;
+    margin-bottom: 20px;
+    
+}
+/*Choose file*/
+.inputfile {
+	width: 0.1px;
+	height: 0.1px;
+	opacity: 0;
+	overflow: hidden;
+
+
+}
+.inputfile + label {
+    font-size: 1em;
+    letter-spacing: 0.1em;
+    font-weight: 700;
+    color: #37DC1A;
+    border: 2px  dotted;
+    padding-left:108px;
+    padding-right:108px;
+    padding-bottom:5px;
+    padding-top:5px;
+    margin-left:12px;
+}
+.inputfile + label img{
+    width:20px;
+    height:25px;
+    margin-bottom:-10px;
+    margin-left:10px;
+}
+/*
+.inputfile:focus + label,
+.inputfile + label:hover {
+    background-color: red;
+}
+*/
+/*Button*/
+button{
+    margin-top:35px;
+    margin-left: 15px;
+    background-color:#37DC1A;
+    border:none;
+    width:150px;
+    height:35px;
+    color:#fff;
+    border-radius:5px;
+}
