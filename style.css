@@ -6,6 +6,8 @@ body{
 
 
 form{
+    // width нельзя использовать тут, только max-with
+    // height тоже нельзя
     width:450px;
     height:600px;
     margin:0 auto;
@@ -40,6 +42,8 @@ form h1{
     margin-top:10px;
     margin-bottom:10px;
 }
+// Зачем некоторые имена классов через тире а некоторые через нижнее подчеркивание?
+// Лучше, надо использовать БЭМ
 .manager_info{
     margin-left:10px;
     margin-top:10px;
