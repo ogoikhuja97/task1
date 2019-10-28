@@ -9,8 +9,10 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
+    <!-- Наименоание классов неправильное -->
     <div class="wrap">
         <form action="">
+            <!-- Следи за CodeStyle, отступы должны быть одинаковыми -->
                 <h1>Специалист менеджер</h1>
             <div class="consultation-form">
             <div class="manager">
@@ -24,6 +26,7 @@
             
             </div>
             <div class="evaluation">
+                <!-- Звездочки должы работать, по клику выделяться. Сделать надо их не img а через input type=radio -->
                 <p>Ваша оценка</p>
                 <div class="evalution_imgages">
                         <img src="images/web-mark-as-favorite-star.png" alt="">
@@ -39,20 +42,26 @@
                 <textarea placeholder="Ваше сообщение " cols="56" rows="10"></textarea>
                     
             </div>
+            <!-- Зачем 2 input ? -->
+            <!-- У input и label должна быть обертка, и через него надо достучаться до label и input -->
             <input type = "file" name = "file" id = "file"  class = "inputfile" data-multiple-caption = "{count} файлов выбрано" несколько />
             <input type="file" name="file" id="file" class="inputfile" />
-            <label for="file"><img src="images/ico_choose-file.png"> Прикрепить файл</label>
+            <label for="file"><img src="images/ico_choose-file.png">Прикрепить файл</label>
             
             <button>Оценить менеджера</button>
             </form>
     </div>
-
+    <!-- Скрипт не должен находиться внутри HTML -->
     <script>
-    
+
+    // Скрипт надо вынести в отдельный файл
     let inputs = document.querySelectorAll( '.inputfile' );
-Array.prototype.ForEach.call( inputs, function( input)
+    // Ошибка в ForEach, правильный вариант forEach
+Array.prototype.forEach.call( inputs, function( input)
 {
-	let label = input.nextElementSibling,
+	// Тут нельзя испоьзовать nextElementSibling
+    // Сейчас label содержит input type=file. Это неверно
+    let label = input.nextElementSibling,
  	   labelVal =label.innerHTML;
 	input.addEventListener( 'change', function(e)
 	{
@@ -63,7 +72,8 @@ Array.prototype.ForEach.call( inputs, function( input)
 	else 
 		fileName = e.target.value.split('\\').pop();
 	if(fileName)
-    label.querySelector( 'span').innerHTML = fileName;
+        // Тут ищется span внутри label, а тег отсутствует
+        label.querySelector( 'span').innerHTML = fileName;
     
 	else
 	label.innerHTML = labelVal;
@@ -74,6 +84,7 @@ Array.prototype.ForEach.call( inputs, function( input)
     
     
     </script>
+    <!-- Если исправить ForEach на forEach, удалить второй input type=file и добавить span в label, все заработает. Но очень много ошибок. Для начало надо нормально сверстать, чтоб был похож к макету-->
 
 </body>
 </html>
